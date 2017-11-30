@@ -32,7 +32,7 @@
             <span class="created" style="color: #6aa84f">{{ blog.created|date:"Y-m-d H:i" }}</span>
         </div>
         <div class="summary">
-            {{ blog.content|truncatewords:100 }}
+            {{ blog.content|slice:'100'}}
         </div>
     </div>
 {% endfor %}
