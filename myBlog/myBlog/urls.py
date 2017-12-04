@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.getBlogs, name='blogList'),
     url(r'^Detail/(\d+)/$', views.getDetail, name='getBlogDetail'),
-    url(r'ckeditor/', include('ckeditor_uploader.urls')),
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
