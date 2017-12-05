@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超级光</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">The Super Light</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							 <a href="{% url 'getMyHome' %}">Home</a>
+						</li>
+						<li>
+							 <a href="{% url 'getBlogList' %}">Article</a>
+						</li>
+                        <li>
+							 <a href="#">Idea</a>
+						</li>
+                        <li>
+							 <a href="#">For Me</a>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div> <button type="submit" class="btn btn-default">Search</button>
+					</form>
+				</div>
+			</nav>
+
+			<div class="carousel slide" id="carousel-548137">
+				<ol class="carousel-indicators">
+					<li data-slide-to="0" data-target="#carousel-548137">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-548137">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-548137" >
+					</li>
+                    <li data-slide-to="3" data-target="#carousel-548137" class="active">
+					</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item">
+                       {% load staticfiles %}
+						<img alt="" src="{% static 'image/first.jpg' %}" />
+						<div class="carousel-caption">
+							<h4>
+								First Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+                        {% load staticfiles %}
+						<img alt="" src="{% static 'image/second.jpg' %}" />
+						<div class="carousel-caption">
+							<h4>
+								Second Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+                    <div class="item">
+                        {% load staticfiles %}
+						<img alt="" src="{% static 'image/third.jpg' %}" />
+						<div class="carousel-caption">
+							<h4>
+								Second Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item active">
+                        {% load staticfiles %}
+						<img alt="" src="{% static 'image/fourth.jpg' %}" />
+						<div class="carousel-caption">
+							<h4>
+								Third Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+				</div> <a class="left carousel-control" href="#carousel-548137" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-548137" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+
+			<div class="jumbotron">
+				<h1>
+				    Hello，World！
+				</h1>
+                <p>
+                    这是一个自由的空间，它，超级光。在这里，我们交流学习，心有灵犀，创造未来。
+                </p>
+				<p>
+					This is a free space called super light.Here, we communicate with each other, and learn from each other for the future.
+				</p>
+				<p>
+					 <a class="btn btn-primary btn-large" href="{% url 'getBlogList' %}">Read More</a>
+				</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
