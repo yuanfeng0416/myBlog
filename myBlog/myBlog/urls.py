@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.getMyHome, name='getMyHome'),
     url(r'^blog/', views.getBlogList, name='getBlogList'),
+    url(r'^category/(\d+)/$', views.getBlogInCategory, name='getBlogInCategory'),
     url(r'^detail/(\d+)/$', views.getBlogDetail, name='getBlogDetail'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -12,6 +12,20 @@ def getMyHome(request):
 def getBlogList(request):
     ctx = {
         'blogs': Blog.objects.all().order_by('-created'),
+        'blogs_category': '全部',
+        'categorys': Category.objects.all()
+    }
+    return render(request, 'blogList.html', ctx)
+
+
+def getBlogInCategory(request, category_id):
+    categorys = Category.objects.filter(id=category_id)
+    for category in categorys:
+        category_name = str(category.name)
+        print(category)
+    ctx = {
+        'blogs': Blog.objects.filter(category=categorys).order_by('-created'),
+        'blogs_category': category_name,
         'categorys': Category.objects.all()
     }
     return render(request, 'blogList.html', ctx)
