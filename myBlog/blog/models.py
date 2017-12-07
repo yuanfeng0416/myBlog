@@ -7,6 +7,7 @@ class Category(models.Model):
     分类
     """
     name = models.CharField('名称', max_length=16)
+    count = models.CharField('数量', max_length=10)
 
     def __str__(self):
         return self.name
@@ -33,6 +34,13 @@ class Blog(models.Model):
     category = models.ForeignKey(Category, verbose_name='分类')
     tags = models.ManyToManyField(Tag, verbose_name='标签')
 
+    def save(self, *args, **kwargs):
+        super(Blog, self).save(*args, **kwargs)  # Call the "real" save() method.
+        Categorys = Category.objects.all()
+        for category in Categorys:
+            category.count = Blog.objects.filter(category=category).count()
+            category.save()
+
     def __str__(self):
         return self.title
 
@@ -46,3 +54,6 @@ class Comment(models.Model):
     email = models.EmailField('邮箱')
     content = models.CharField('内容', max_length=140)
     created = models.DateTimeField('发布时间', auto_now_add=True)
+
+    def __str__(self):
+        return self.content
