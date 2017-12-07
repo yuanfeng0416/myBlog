@@ -35,7 +35,14 @@ class Blog(models.Model):
     tags = models.ManyToManyField(Tag, verbose_name='标签')
 
     def save(self, *args, **kwargs):
-        super(Blog, self).save(*args, **kwargs)  # Call the "real" save() method.
+        super(Blog, self).save(*args, **kwargs)
+        Categorys = Category.objects.all()
+        for category in Categorys:
+            category.count = Blog.objects.filter(category=category).count()
+            category.save()
+
+    def delete(self, using=None, keep_parents=False):
+        super(Blog, self).delete(using=None, keep_parents=False)
         Categorys = Category.objects.all()
         for category in Categorys:
             category.count = Blog.objects.filter(category=category).count()

@@ -63,8 +63,7 @@
 				</li>
 			</ul>
             {% for blog in blogs %}
-                <div>
-                    <div class="title">
+                    <div class="row clearfix">
                         <div class="col-md-4 column">
                             <a href="{% url 'getBlogDetail' blog.id %}" style="color: #4a86e8"><h2>{{ blog.title }}</h2></a>
                             <div class="info">
@@ -84,7 +83,6 @@
                             </p>
                         </div>
                     </div>
-                </div>
             {% endfor %}
         </div>
 
